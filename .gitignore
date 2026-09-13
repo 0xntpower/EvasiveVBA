@@ -28,3 +28,7 @@ env/
 
 .env
 *.log
+
+.repowise/
+*.dll
+*.exe
