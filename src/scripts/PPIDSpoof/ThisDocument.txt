@@ -1,0 +1,13 @@
+' Paste this into ThisDocument (double-click it in the Project Explorer).
+' This is the event trigger — it fires when the .doc is opened.
+' The module name in the call must match the standard module you pasted the script into.
+
+' For PPIDSpoof_Standalone.bas:
+Private Sub Document_Open()
+    PPIDSpoof_Standalone.Run
+End Sub
+
+' For PPIDSpoof.bas (requires WinAPI_Core.bas also imported):
+' Private Sub Document_Open()
+'     PPIDSpoof.Run
+' End Sub
