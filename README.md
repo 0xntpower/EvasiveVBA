@@ -6,7 +6,7 @@ Included in the kit:
 
 1. **Python tools** that operate on Office documents at the binary level (stomp VBA source, extract and inspect macro strings)
 2. **WinAPI helper modules** for VBA — prebuilt declares and wrappers so you spend less time on API signatures and more on the actual payload
-3. **Standalone VBA scripts** implementing specific techniques (PPID spoofing, AMSI neutralization, ETW silencing, a full-chain dropper, more to come)
+3. **Standalone VBA payloads** implementing specific techniques (PPID spoofing, AMSI neutralization, ETW silencing, a full-chain dropper, more to come)
 
 ## Quick start
 
@@ -32,10 +32,24 @@ Import `WinAPI_Core.bas` and `WinAPI.bas` into any VBA project (Word, Excel, Acc
 
 See the module headers for the full function list.
 
-## VBA scripts
+## VBA payloads
 
-Each technique lives in its own folder under `src/scripts/`. Every folder contains:
+Each technique lives in its own folder under `src/payloads/`. Every folder contains:
 
 - `*_Standalone.bas` — self-contained, paste into a standard module and go
 - `*.bas` — same logic, but uses WinAPI_Core.bas for shared types/declares
 - `ThisDocument.txt` — the event hook to paste into ThisDocument
+
+| Payload | What it does |
+|---|---|
+| `AmsiNeutralize` | Neutralizes runtime content scans by relocating the engine's stored scan pointer to a return-success gadget in ntdll. |
+| `EtwSilence` | Silences user-mode ETW by clearing the cached enable bytes on every provider registration in the process. |
+| `Dropper` | The full chain in one module: both neutralizers, then WinHTTP fetch, manual mapping, and a threadless DllMain call. |
+| `ReflectiveLoader_WinHTTP` | Fetches a DLL over HTTP(S) and manually maps it in-process; no file touches disk. |
+| `ReflectiveLoader_DNS` | Same mapper, with the payload retrieved through DNS TXT record queries. |
+| `ReflectiveLoader_ICMP` | Same mapper, with the payload carried inside ICMP echo packets. |
+| `PPIDSpoof` | Spawns a process under a chosen legitimate parent process. |
+
+---
+
+This is meant for authorized pentesting only.

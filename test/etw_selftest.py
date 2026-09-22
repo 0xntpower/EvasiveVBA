@@ -32,7 +32,7 @@ except ImportError:
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parent.parent
-BAS = ROOT / "src" / "scripts" / "EtwSilence" / "EtwSilence_Standalone.bas"
+BAS = ROOT / "src" / "payloads" / "EtwSilence" / "EtwSilence_Standalone.bas"
 DOC_PATH = ROOT / "test" / "etw_selftest.doc"
 LOG_PATH = ROOT / "test" / "etw_selftest.log"
 ETL_PATH = ROOT / "test" / "etw_selftest.etl"

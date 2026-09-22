@@ -8,10 +8,10 @@ import pythoncom
 import win32com.client
 
 ROOT = Path(__file__).resolve().parent.parent
-SCRIPTS = ROOT / "src" / "scripts" / "ReflectiveLoader_ICMP"
+PAYLOADS = ROOT / "src" / "payloads" / "ReflectiveLoader_ICMP"
 STOMP = ROOT / "src" / "tools" / "vba-stomp" / "vba_stomp.py"
-BAS = SCRIPTS / "ReflectiveLoader_ICMP_Standalone.bas"
-DOC = SCRIPTS / "loader_icmp.doc"
+BAS = PAYLOADS / "ReflectiveLoader_ICMP_Standalone.bas"
+DOC = PAYLOADS / "loader_icmp.doc"
 MODULE_NAME = "RefLoader_ICMP"
 
 

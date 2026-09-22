@@ -20,7 +20,7 @@ except ImportError:
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parent.parent
-SCRIPTS = ROOT / "src" / "scripts"
+PAYLOADS = ROOT / "src" / "payloads"
 STOMP = ROOT / "src" / "tools" / "vba-stomp" / "vba_stomp.py"
 
 VARIANTS = [
@@ -57,9 +57,9 @@ def com_call_with_retry(func, retries=5, delay=1.0):
 
 
 def create_doc(variant: dict, word_app) -> Path:
-    script_dir = SCRIPTS / variant["name"]
-    bas_path = script_dir / variant["bas"]
-    doc_path = script_dir / variant["doc_name"]
+    payload_dir = PAYLOADS / variant["name"]
+    bas_path = payload_dir / variant["bas"]
+    doc_path = payload_dir / variant["doc_name"]
 
     if doc_path.exists():
         doc_path.unlink()

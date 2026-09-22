@@ -28,7 +28,7 @@ except ImportError:
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parent.parent
-BAS = ROOT / "src" / "scripts" / "Dropper" / "Dropper_Standalone.bas"
+BAS = ROOT / "src" / "payloads" / "Dropper" / "Dropper_Standalone.bas"
 DLL = ROOT / "test" / "test_dll_quiet.dll"
 PAYLOAD = ROOT / "test" / "payload.bin"
 SCOPE_VALUE = "MacroRuntimeScanScope"

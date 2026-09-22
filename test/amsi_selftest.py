@@ -28,7 +28,7 @@ except ImportError:
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parent.parent
-BAS = ROOT / "src" / "scripts" / "AmsiNeutralize" / "AmsiNeutralize_Standalone.bas"
+BAS = ROOT / "src" / "payloads" / "AmsiNeutralize" / "AmsiNeutralize_Standalone.bas"
 DOC_PATH = ROOT / "test" / "amsi_selftest.doc"
 LOG_PATH = ROOT / "test" / "amsi_selftest.log"
 
