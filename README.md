@@ -6,7 +6,7 @@ Included in the kit:
 
 1. **Python tools** that operate on Office documents at the binary level (stomp VBA source, extract and inspect macro strings)
 2. **WinAPI helper modules** for VBA — prebuilt declares and wrappers so you spend less time on API signatures and more on the actual payload
-3. **Standalone VBA scripts** implementing specific techniques (PPID spoofing, AMSI neutralization, ETW silencing, more to come)
+3. **Standalone VBA scripts** implementing specific techniques (PPID spoofing, AMSI neutralization, ETW silencing, a full-chain dropper, more to come)
 
 ## Quick start
 
