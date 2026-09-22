@@ -1,0 +1,21 @@
+' Paste this into ThisDocument (double-click it in the Project Explorer).
+' This is the event trigger - it arms the neutralizer when the .doc is opened,
+' and disarms it on close so the handler never outlives the VBA project.
+
+' For AmsiNeutralize_Standalone.bas:
+Private Sub Document_Open()
+    ScanCtx_Standalone.Arm
+End Sub
+
+Private Sub Document_Close()
+    ScanCtx_Standalone.Disarm
+End Sub
+
+' For AmsiNeutralize.bas (requires WinAPI_Core.bas also imported):
+' Private Sub Document_Open()
+'     ScanCtx.Arm
+' End Sub
+'
+' Private Sub Document_Close()
+'     ScanCtx.Disarm
+' End Sub
